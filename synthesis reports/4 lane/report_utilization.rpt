@@ -1,0 +1,45 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Aug 29 18:28:55 2026
+| Host         : SOHAN running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file report_utilization.rpt
+| Design       : ris_core_top
+| Device       : 7z020clg400-1
+| Design State : Fully Placed
+------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------+------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|          Instance          |         Module         | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++----------------------------+------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| ris_core_top               |                  (top) |       2642 |       2642 |       0 |    0 | 3086 |      0 |      0 |           20 |
+|   (ris_core_top)           |                  (top) |         18 |         18 |       0 |    0 |  532 |      0 |      0 |            0 |
+|   gen_simd_lanes[0].u_lane |              lane_core |        707 |        707 |       0 |    0 |  655 |      0 |      0 |            5 |
+|     u_quantizer            |      phase_quantizer_9 |         70 |         70 |       0 |    0 |    4 |      0 |      0 |            1 |
+|     u_sqrt                 |  non_restoring_sqrt_10 |        587 |        587 |       0 |    0 |  647 |      0 |      0 |            0 |
+|     u_squarer              | dsp_squarer_cascade_11 |         50 |         50 |       0 |    0 |    4 |      0 |      0 |            4 |
+|   gen_simd_lanes[1].u_lane |            lane_core_0 |        639 |        639 |       0 |    0 |  633 |      0 |      0 |            5 |
+|     u_quantizer            |      phase_quantizer_6 |          4 |          4 |       0 |    0 |    2 |      0 |      0 |            1 |
+|     u_sqrt                 |   non_restoring_sqrt_7 |        585 |        585 |       0 |    0 |  631 |      0 |      0 |            0 |
+|     u_squarer              |  dsp_squarer_cascade_8 |         50 |         50 |       0 |    0 |    0 |      0 |      0 |            4 |
+|   gen_simd_lanes[2].u_lane |            lane_core_1 |        639 |        639 |       0 |    0 |  633 |      0 |      0 |            5 |
+|     u_quantizer            |      phase_quantizer_3 |          4 |          4 |       0 |    0 |    2 |      0 |      0 |            1 |
+|     u_sqrt                 |   non_restoring_sqrt_4 |        585 |        585 |       0 |    0 |  631 |      0 |      0 |            0 |
+|     u_squarer              |  dsp_squarer_cascade_5 |         50 |         50 |       0 |    0 |    0 |      0 |      0 |            4 |
+|   gen_simd_lanes[3].u_lane |            lane_core_2 |        639 |        639 |       0 |    0 |  633 |      0 |      0 |            5 |
+|     u_quantizer            |        phase_quantizer |          4 |          4 |       0 |    0 |    2 |      0 |      0 |            1 |
+|     u_sqrt                 |     non_restoring_sqrt |        585 |        585 |       0 |    0 |  631 |      0 |      0 |            0 |
+|     u_squarer              |    dsp_squarer_cascade |         50 |         50 |       0 |    0 |    0 |      0 |      0 |            4 |
++----------------------------+------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

@@ -1,0 +1,327 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Aug 29 18:28:55 2026
+| Host         : SOHAN running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -file report_timing.rpt
+| Design       : ris_core_top
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 66 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 514 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.075        0.000                      0                 7154        0.122        0.000                      0                 7154        2.783        0.000                       0                  3106  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock  Waveform(ns)         Period(ns)      Frequency(MHz)
+-----  ------------         ----------      --------------
+clk    {0.000 3.333}        6.667           149.992         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk                 0.075        0.000                      0                 7154        0.122        0.000                      0                 7154        2.783        0.000                       0                  3106  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk
+  To Clock:  clk
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.075ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.122ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        2.783ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.075ns  (required time - arrival time)
+  Source:                 gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[7].R_stage_reg[7][2]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].Q_stage_reg[8][0]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk rise@6.667ns - clk rise@0.000ns)
+  Data Path Delay:        6.554ns  (logic 3.870ns (59.045%)  route 2.684ns (40.955%))
+  Logic Levels:           10  (CARRY4=8 LUT2=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 7.591 - 6.667 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=3105, unset)         0.973     0.973    gen_simd_lanes[2].u_lane/u_sqrt/clk
+    SLICE_X30Y15         FDCE                                         r  gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[7].R_stage_reg[7][2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y15         FDCE (Prop_fdce_C_Q)         0.518     1.491 f  gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[7].R_stage_reg[7][2]/Q
+                         net (fo=4, routed)           1.003     2.494    gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].next_R_shifted[4]
+    SLICE_X33Y18         LUT2 (Prop_lut2_I0_O)        0.124     2.618 r  gen_simd_lanes[2].u_lane/u_sqrt/i__carry_i_7__70/O
+                         net (fo=1, routed)           0.000     2.618    gen_simd_lanes[2].u_lane/u_sqrt/i__carry_i_7__70_n_0
+    SLICE_X33Y18         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     3.168 r  gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__14/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     3.168    gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__14/i__carry_n_0
+    SLICE_X33Y19         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.282 r  gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__14/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     3.282    gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__14/i__carry__0_n_0
+    SLICE_X33Y20         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.553 r  gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__14/i__carry__1/CO[0]
+                         net (fo=21, routed)          0.914     4.467    gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__14/i__carry__1_n_3
+    SLICE_X38Y16         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.844     5.311 r  gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].R_stage_reg[8][2]_i_1__1/CO[3]
+                         net (fo=1, routed)           0.000     5.311    gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].R_stage_reg[8][2]_i_1__1_n_0
+    SLICE_X38Y17         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.428 r  gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].R_stage_reg[8][6]_i_1__1/CO[3]
+                         net (fo=1, routed)           0.000     5.428    gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].R_stage_reg[8][6]_i_1__1_n_0
+    SLICE_X38Y18         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.337     5.765 f  gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].R_stage_reg[8][10]_i_1__1/O[1]
+                         net (fo=3, routed)           0.767     6.532    gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].R_stage_reg[8][10]_i_1__1_n_6
+    SLICE_X39Y19         LUT2 (Prop_lut2_I0_O)        0.306     6.838 r  gen_simd_lanes[2].u_lane/u_sqrt/i__carry__0_i_8__71/O
+                         net (fo=1, routed)           0.000     6.838    gen_simd_lanes[2].u_lane/u_sqrt/i__carry__0_i_8__71_n_0
+    SLICE_X39Y19         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.370 r  gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__17/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.370    gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__17/i__carry__0_n_0
+    SLICE_X39Y20         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157     7.527 r  gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__17/i__carry__1/CO[1]
+                         net (fo=1, routed)           0.000     7.527    gen_simd_lanes[2].u_lane/u_sqrt/p_0_out_inferred__17/i__carry__1_n_2
+    SLICE_X39Y20         FDCE                                         r  gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].Q_stage_reg[8][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        6.667     6.667 r  
+                                                      0.000     6.667 r  clk (IN)
+                         net (fo=3105, unset)         0.924     7.591    gen_simd_lanes[2].u_lane/u_sqrt/clk
+    SLICE_X39Y20         FDCE                                         r  gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].Q_stage_reg[8][0]/C
+                         clock pessimism              0.000     7.591    
+                         clock uncertainty           -0.035     7.556    
+    SLICE_X39Y20         FDCE (Setup_fdce_C_D)        0.046     7.602    gen_simd_lanes[2].u_lane/u_sqrt/gen_sqrt_stages[8].Q_stage_reg[8][0]
+  -------------------------------------------------------------------
+                         required time                          7.602    
+                         arrival time                          -7.527    
+  -------------------------------------------------------------------
+                         slack                                  0.075    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.122ns  (arrival time - required time)
+  Source:                 gen_simd_lanes[3].u_lane/u_sqrt/gen_sqrt_stages[9].D_stage_reg[9][28]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            gen_simd_lanes[3].u_lane/u_sqrt/gen_sqrt_stages[10].D_stage_reg[10][30]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.228ns  (logic 0.141ns (61.814%)  route 0.087ns (38.186%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=3105, unset)         0.410     0.410    gen_simd_lanes[3].u_lane/u_sqrt/clk
+    SLICE_X37Y35         FDCE                                         r  gen_simd_lanes[3].u_lane/u_sqrt/gen_sqrt_stages[9].D_stage_reg[9][28]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X37Y35         FDCE (Prop_fdce_C_Q)         0.141     0.551 r  gen_simd_lanes[3].u_lane/u_sqrt/gen_sqrt_stages[9].D_stage_reg[9][28]/Q
+                         net (fo=1, routed)           0.087     0.638    gen_simd_lanes[3].u_lane/u_sqrt/gen_sqrt_stages[9].D_stage_reg_n_0_[9][28]
+    SLICE_X36Y35         FDCE                                         r  gen_simd_lanes[3].u_lane/u_sqrt/gen_sqrt_stages[10].D_stage_reg[10][30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=3105, unset)         0.432     0.432    gen_simd_lanes[3].u_lane/u_sqrt/clk
+    SLICE_X36Y35         FDCE                                         r  gen_simd_lanes[3].u_lane/u_sqrt/gen_sqrt_stages[10].D_stage_reg[10][30]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X36Y35         FDCE (Hold_fdce_C_D)         0.085     0.517    gen_simd_lanes[3].u_lane/u_sqrt/gen_sqrt_stages[10].D_stage_reg[10][30]
+  -------------------------------------------------------------------
+                         required time                         -0.517    
+                         arrival time                           0.638    
+  -------------------------------------------------------------------
+                         slack                                  0.122    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk
+Waveform(ns):       { 0.000 3.333 }
+Period(ns):         6.667
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         6.667       2.783      DSP48_X0Y3    gen_simd_lanes[0].u_lane/u_squarer/dx2_r_reg/CLK
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         3.333       2.833      SLICE_X16Y22  dispatching_reg/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         3.333       2.833      SLICE_X16Y22  dispatching_reg/C
+
+
+

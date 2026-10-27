@@ -1,0 +1,34 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sun Aug 30 14:23:25 2026
+| Host         : SOHAN running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file report_utilization.rpt
+| Design       : ris_core_top
+| Device       : 7z020clg400-1
+| Design State : Fully Placed
+------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------+---------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|     Instance     |        Module       | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++------------------+---------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| ris_core_top     |               (top) |       1212 |       1212 |       0 |    0 | 1196 |      0 |      0 |            5 |
+|   (ris_core_top) |               (top) |         25 |         25 |       0 |    0 |  541 |      0 |      0 |            0 |
+|   u_lane         |           lane_core |       1187 |       1187 |       0 |    0 |  655 |      0 |      0 |            5 |
+|     (u_lane)     |           lane_core |         16 |         16 |       0 |    0 |    0 |      0 |      0 |            0 |
+|     u_quantizer  |     phase_quantizer |        551 |        551 |       0 |    0 |    4 |      0 |      0 |            1 |
+|     u_sqrt       |  non_restoring_sqrt |        586 |        586 |       0 |    0 |  647 |      0 |      0 |            0 |
+|     u_squarer    | dsp_squarer_cascade |         34 |         34 |       0 |    0 |    4 |      0 |      0 |            4 |
++------------------+---------------------+------------+------------+---------+------+------+--------+--------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+
