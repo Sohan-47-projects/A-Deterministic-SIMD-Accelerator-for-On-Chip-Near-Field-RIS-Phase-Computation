@@ -1,4 +1,5 @@
 
+
 # A Deterministic SIMD Accelerator for On-Chip Near-Field RIS Phase Computation
 
 [![Hardware](https://img.shields.io/badge/Hardware-Xilinx%20Zynq--7020-red)](#fpga-implementation--post-route-results)
@@ -119,6 +120,9 @@ $$S = 10\log_{10} \left| \sum_{m,n=1}^{16} w_{m,n} e^{j(\Phi_{m,n} - k\Delta d_{
 ### 3. Closed-Loop Tracking & Blockage Co-Simulation
 A lockstep TCP socket server (`ipc_hw_runner.py`) bridges a Python **Constant-Velocity Kalman Filter (KF)** and **4-State Recovery FSM** (`TRACKING_LOCK`, `COVARIANCE_EXPAND`, `CODEBOOK_SWEEP`, `LINK_RESET`) directly to the compiled SystemVerilog RTL running inside **Icarus Verilog**:
 * **3D Mobility Trajectory:** 60-epoch trajectory across a $44\times32\times20\text{ cm}$ volume at $z \approx 0.85\text{ m}$ (peak velocity $2.5\text{ m/s}$, observation noise $\sigma_r = 12\text{ mm}$, tracking error $29\text{ mm}$ RMS).
+  
+<img width="1317" height="1275" alt="cosim_results" src="https://github.com/user-attachments/assets/45db2967-bebc-40e7-8a6b-4b5ef3462237" />
+
 * **Blockage Recovery:** Under an injected **30 dB obstruction** (frames 22–30), the system maintains a mean closed-loop array gain of **46.0 dB** outside the blockage window and autonomously sweeps and re-acquires lock.
 * **Monte Carlo Robustness:** Across **500 randomized Monte Carlo trials** (varying trajectory kinematics, noise seeds, blockage onset, and duration), the controller recovered lock within **5 frames** of blockage clearance in **100% of trials**.
 
