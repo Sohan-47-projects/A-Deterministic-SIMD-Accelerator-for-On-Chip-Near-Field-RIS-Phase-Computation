@@ -1,3 +1,4 @@
+
 # A Deterministic SIMD Accelerator for On-Chip Near-Field RIS Phase Computation
 
 [![Hardware](https://img.shields.io/badge/Hardware-Xilinx%20Zynq--7020-red)](#fpga-implementation--post-route-results)
@@ -120,6 +121,8 @@ A lockstep TCP socket server (`ipc_hw_runner.py`) bridges a Python **Constant-Ve
 * **3D Mobility Trajectory:** 60-epoch trajectory across a $44\times32\times20\text{ cm}$ volume at $z \approx 0.85\text{ m}$ (peak velocity $2.5\text{ m/s}$, observation noise $\sigma_r = 12\text{ mm}$, tracking error $29\text{ mm}$ RMS).
 * **Blockage Recovery:** Under an injected **30 dB obstruction** (frames 22–30), the system maintains a mean closed-loop array gain of **46.0 dB** outside the blockage window and autonomously sweeps and re-acquires lock.
 * **Monte Carlo Robustness:** Across **500 randomized Monte Carlo trials** (varying trajectory kinematics, noise seeds, blockage onset, and duration), the controller recovered lock within **5 frames** of blockage clearance in **100% of trials**.
+
+<img width="2420" height="726" alt="cosim_results" src="https://github.com/user-attachments/assets/f722e741-0837-44aa-9e79-39a880a7a316" />
 
 ### 4. Channel Coherence & Scalability Context
 Under the Jakes fading model ($T_c \approx 9/(16\pi f_D)$) at $30\text{ GHz}$, a rapid mobile velocity of $v \approx 10.7\text{ m/s}$ yields a coherence time of $T_c = 167\text{ }\mu\text{s}$.
