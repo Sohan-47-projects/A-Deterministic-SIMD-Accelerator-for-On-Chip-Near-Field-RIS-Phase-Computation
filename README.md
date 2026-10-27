@@ -4,7 +4,7 @@
 [![Hardware](https://img.shields.io/badge/Hardware-Xilinx%20Zynq--7020-red)](#fpga-implementation--post-route-results)
 [![HDL](https://img.shields.io/badge/HDL-SystemVerilog-blue)](#verification--closed-loop-co-simulation)
 [![Co-Simulation](https://img.shields.io/badge/Co--Sim-Python%20%2B%20Icarus%20Verilog-green)](#verification--closed-loop-co-simulation)
-[![Target](https://img.shields.io/badge/Status-IEEE%20ESL%20Submission-orange)](#citation)
+
 
 > **GitHub "About" Description:**  
 > A deterministic 4-lane SIMD FPGA accelerator for codebook-free, real-time near-field RIS beam steering ($16\times16$ array at 30 GHz). Computes 256-element 2-bit phase profiles in 87 cycles (580 ns at 150 MHz) via a Q4.12 non-restoring square-root and BAM datapath.
