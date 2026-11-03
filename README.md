@@ -132,7 +132,7 @@ A lockstep TCP socket server (`ipc_hw_runner.py`) bridges a Python **Constant-Ve
 <img width="2420" height="726" alt="cosim_results" src="https://github.com/user-attachments/assets/f722e741-0837-44aa-9e79-39a880a7a316" />
 
 ### 4. Channel Coherence & Scalability Context
-Under the Jakes fading model ($T_c \approx 9/(16\pi f_D)$) at $30\text{ GHz}$, a rapid mobile velocity of $v \approx 10.7\text{ m/s}$ yields a coherence time of $T_c = 167\text{ }\mu\text{s}$.
+Under the Jakes fading model $\left( T_c \approx \frac{9}{16\pi f_D} \right)$ at 30 GHz, a rapid mobile velocity of $v \approx 10.7\text{ m/s}$ yields a coherence time of $T_c = 167\ \mu\text{s}$.
 * The accelerator's **580 ns** update consumes just **0.35%** of the coherence window (compared to $15\text{--}68\text{ }\mu\text{s}$ simulated on a 667 MHz ARM Cortex-A9), freeing the host CPU entirely for state estimation.
 * For larger apertures, the 4-lane architecture scales deterministically at 1 cycle per 4 elements, projecting **1.9 µs** for $N=1024$ and **3.6 µs** for $N=2048$.
 
