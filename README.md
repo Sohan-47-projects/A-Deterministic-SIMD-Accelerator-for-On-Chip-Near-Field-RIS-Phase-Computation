@@ -34,25 +34,7 @@ For a steering target at $\mathbf{p}_t$ and the $i$-th RIS element at $\mathbf{p
 
 $$\theta_i = \frac{2\pi}{\lambda} R_i, \quad R_i = \sqrt{\Delta x_i^2 + \Delta y_i^2 + \Delta z_i^2} = \|\mathbf{p}_t - \mathbf{p}_i\|_2$$
 
-```text
-+-------------------+   target    +-------------------+   start    +-------------------+
-|     Host CPU      | ----------> |  AXI4-Lite Slave  | ---------> |   Dispatch Ctrl   |
-|    (KF + FSM)     |             |      + CSRs       |            |   + 4 ROM Banks   |
-+-------------------+             +-------------------+            +-------------------+
-          ^                                                                  |
-          | readback                                                         | coords
-          |                                                                  v
-+-------------------+    2-b      +----------------------------------------------------+
-|  512-b Phase Reg  | <---------  | 4 SIMD Lanes (22 Cycles / Element, II = 1):        |
-|  File (16x32-bit) |   states    |  [1] DSP48 Cascade Squarer (4 cycles)              |
-+-------------------+             |  [2] Non-Restoring Sqrt Recurrence (16 cycles)     |
-          |                       |  [3] BAM Scaling + 2-bit Quantizer (2 cycles)      |
-          | phases                +----------------------------------------------------+
-          v
-+-------------------+
-| PIN-Diode Control |
-+-------------------+
-```
+<img width="623" height="402" alt="image" src="https://github.com/user-attachments/assets/02ca5509-6a72-42f2-a174-e88a5c1ecf13" />
 
 ### 1. Fixed-Point Format & 22-Cycle Lane Pipeline
 * **Number Representation:** Target and element coordinates use signed **Q4.12** fixed-point meters ($\text{LSB} = 0.24\text{ mm} = \lambda/41$, span $\pm 8\text{ m}$). Squared distance $D$ is unsigned **Q8.24** (32-bit), and extracted range $R$ is unsigned **Q4.12** (16-bit), yielding $8.8^\circ$ of phase resolution per range LSB.
